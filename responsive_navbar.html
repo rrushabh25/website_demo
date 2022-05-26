@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root{
+            ---bgc---200:rgb(156, 153, 153);
+            ---bgc---400:rgb(124, 124, 124);
+            ---bgc---600:rgb(100, 100, 100);
+            ---bgc---800:rgb(73, 73, 73);
+            ---bgc---1000:rgb(46, 45, 45);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav
+        {
+            display: flex;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            height: 42px;
+            background-color: #090030;
+            color: white;
+        }
+        nav div.logo{
+            padding-left: 30px;
+            font-size: 30px;
+            font-weight: 700;
+            font-family: cursive;
+        }
+        nav ul{
+            display: flex;
+            list-style: none;
+            padding: 0 30px ;
+        }
+        nav ul li a{
+            margin: 5px 8px;
+            text-decoration: none;
+            color:#fff;
+            font-weight: 600;
+            font-family: arial;
+            border: 2px solid transparent;
+            padding: 5px 8px;
+        }
+        nav ul li a:hover,.active{
+            border: 2px solid white;
+            padding: 5px 8px;
+            border-radius:8px ;
+        }
+        #chack{
+            display: none;
+        }
+        #chack+label i{
+            font-size: 25px;
+            cursor: pointer;
+            display: none;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+        #chack:checked ~ ul{
+                left: 0%;
+            }
+            
+        @media only screen and (max-width:800px) {
+            
+            nav{
+                display: block;
+            }
+            nav ul{
+                display: block;
+                background-color: #000;
+                width: 100%;
+                /* padding: 10px 0; */
+                position: absolute;
+                left: -100%;
+                transition: all .3s ease;
+            }
+            nav ul li{
+                text-align: center;
+                margin: 15px;
+                
+            }
+            nav ul li a:hover,.active{
+            border: 2px solid transparent;
+            color: blue;
+            }
+            #chack+label i{
+                display: block;
+                
+            }
+            
+            #chack:checked+label i::before{
+                content: "\f00d";
+            }
+            
+        }
+        div.home
+        {   
+            padding-top: 50px;
+            background-color: var(---bgc---200);
+            height: 100vh;
+        }
+        div.services{
+            padding-top: 50px;
+            background-color: var(---bgc---400);
+            height: 100vh;
+        }
+        div.ABOUT{
+            padding-top: 50px;
+            background-color: var(---bgc---600);
+            height: 100vh;
+        }
+        div.CONTACT{
+            padding-top: 50px;
+            background-color: var(---bgc---800);
+            height: 100vh;
+        }
+        div.GALLARy{
+            padding-top: 50px;
+            background-color:var(---bgc---1000);
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">LOGO</div>
+            <input type="checkbox" id="chack"><label for="chack"><i class="fa-solid fa-bars"></i></i></label>
+        <ul>
+            <li><a class="active" href="#home">HOME</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#gallary">GALLARY</a></li>
+        </ul>
+    </nav>
+    <div class="home" id="home">
+        <h1>Nishant bhavsar </h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem temporibus totam laborum, error veniam magni facere corrupti tempora in ut consequatur doloribus similique enim saepe, quis quam reiciendis repellendus tempore. Magni maiores illo tempore.
+        </p>
+    </div>
+    <div class="services" id="services">
+        <h1>services</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti nemo deserunt voluptatibus omnis dicta quos voluptatem rerum, veniam corporis explicabo odit amet nobis illum est placeat consectetur incidunt voluptas non, qui aliquid quam. Fugiat.</p>
+    </div>
+    <div class="ABOUT" id="about">
+        <h1>ABOUT</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti nemo deserunt voluptatibus omnis dicta quos voluptatem rerum, veniam corporis explicabo odit amet nobis illum est placeat consectetur incidunt voluptas non, qui aliquid quam. Fugiat.</p>
+    </div>
+    <div class="CONTACT" id="contact">
+        <h1>CONTACT</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti nemo deserunt voluptatibus omnis dicta quos voluptatem rerum, veniam corporis explicabo odit amet nobis illum est placeat consectetur incidunt voluptas non, qui aliquid quam. Fugiat.</p>
+    </div>
+    <div class="GALLARy" id="gallary">
+        <h1>GALLARy</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti nemo deserunt voluptatibus omnis dicta quos voluptatem rerum, veniam corporis explicabo odit amet nobis illum est placeat consectetur incidunt voluptas non, qui aliquid quam. Fugiat.</p>
+    </div>
+</body>
+</html>
